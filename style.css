@@ -1,0 +1,393 @@
+.body1 {
+    background-image: url('./fotos/patroon.jpg');
+    background-size: cover;
+    justify-content: center;
+    display: flex;
+    align-content: center;
+}
+
+.h1 {
+    color: white;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.p {
+    color: white;
+}
+
+.label {
+    color: white;
+    font-size: 16px;
+}
+
+.login {
+    margin-top: 100px;
+    background-color: #9740c2;
+    width: 400px;
+    padding: 40px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 0px 15px 5px #471d5c;
+    border-radius: 10px;
+}
+
+.input {
+    color: #471d5c;
+    border-color: #471d5c;
+    height: 50px;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    box-shadow: 0px 0px 5px 5px #471d5c;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.input:hover {
+    box-shadow: 0px 0px 5px 5px #9740c2;
+}
+
+.button {
+    background-color: #471d5c;
+    border-color: transparent;
+    color: white;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #5b2477;
+}
+
+.h3 {
+    border-radius: 5px;
+    color: white;
+    background-color: red;
+    width: 400px;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0px 0px 2px 2px black;
+}
+
+
+body {
+    background-image: url('./fotos/patroon.jpg');
+    background-size: cover;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #9740c2;
+    height: 60px;
+    padding: 0 20px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.navbar button:hover img {
+    filter: brightness(0) invert(1);
+}
+
+
+.navbar h2 {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar button {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 0 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar button:hover {
+    transform: scale(1.05);
+    background-color: rgb(225, 97, 251);
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar img {
+    height: 20px;
+    margin-right: 5px;
+}
+
+h1 {
+    color: white;
+}
+
+.week {
+    background-color: #9740c2;
+    width: 500px;
+    height: 200px;
+    box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.347);
+    border-radius: 10px;
+}
+
+.dagen {
+    height: 80px;
+    width: 50px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-color: transparent;
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.347);
+}
+
+.a {
+    margin-top: 20px;
+    margin-left: 250px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bezoeken {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.bezoeken a:hover {
+    color: rgb(225, 97, 251);
+}
+
+.dag {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.dag button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.aantal {
+    padding-left: 10px;
+    border-radius: 5px;
+    width: 200px;
+    background-color: white;
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.347);
+}
+
+.deel {
+    font-size: 15px;
+    margin-right: 10px;
+    border-color: transparent;
+    height: 250px;
+    width: 200px;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.347);
+}
+
+.deel:hover {
+    transform: scale(1.05);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: rgba(221, 142, 237, 0.762);
+}
+
+.deel img {
+    object-fit: cover;
+    height: 130px;
+    width: 130px;
+    box-shadow: 0px 0px 3px 3px black;
+    margin-bottom: 20px;
+}
+
+.lichaamdeel {
+    justify-content: space-evenly;
+    display: flex;
+}
+
+h1 {
+    color: white;
+    font-size: 40px;
+}
+
+h2 {
+    color: white;
+    font-size: 30px;
+}
+
+h3 {
+    color: white;
+}
+
+.aantal h3 {
+    color: black;
+}
+
+.beschrijving {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.beschrijving h3 {
+    text-align: center;
+    background-color: #9740c2;
+    width: 500px;
+    height: auto;
+    padding: 15px;
+    box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.347);
+    border-radius: 10px;
+}
+
+.h1midden {
+    display: flex;
+    justify-content: center;
+}
+
+.reclame {
+    margin-left: 650px;
+    display: flex;
+    flex-direction: column;
+    background-color: #9740c2;
+    color: white;
+    width: 360px;
+    height: 600px;
+    box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.347);
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: auto;
+}
+
+.reclame h1 {
+    font-size: 30px;
+}
+
+.reclame h2 {
+    font-size: 20px;
+}
+
+.reclame a {
+    color: white;
+    border: 2px solid white;
+    padding: 10px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.reclame a:hover {
+    background-color: rgb(225, 97, 251);
+    transform: scale(1.05);
+}
+
+.hoofd {
+    display: flex;
+    flex-direction: row;
+}
+.bodygetrained {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+.getrained label{
+    color: white;
+}
+.getrained {
+        background-color: #9740c2;
+        width: 500px;
+        height: 500px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        box-shadow: 0px 0px 10px 10px #471d5c;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+.getrained select {
+    color: #471d5c;
+    border-color: #471d5c;
+    height: 50px;
+    width: 400px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    box-shadow: 0px 0px 5px 5px #471d5c;
+    border-radius: 5px;
+}
+
+.getrained select:hover {
+    box-shadow: 0px 0px 5px 5px #9740c2;
+}
+.getrained button {
+    background-color: #471d5c;
+    border-color: transparent;
+    color: white;
+    width: 200px;
+    height: 50px;
+}
+.getrained button:hover {
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #5b2477;
+}
+.geschiedenis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.geschiedenis h1 {
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+
+.gesdeel {
+    margin-top: 20px;
+    width: 500px;
+    background-color: #9740c2;
+    box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.347);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gesdeel img {
+    box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.347);
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.gesdeel div h3 {
+    font-size: 18px;
+    margin: 5px 0;
+}

@@ -24,7 +24,7 @@ Volg onderstaande stappen om het project lokaal op te zetten:
 
 1. **Clone het project** naar je lokale machine:
     ```bash
-    git clone git@git.nexed.com:0191bd26-8ad6-775a-a3fb-8161a33b6a11/0191c670-cd87-7c19-9c2a-01dd8a284e48/Almost-there-5820506ed00c-fb3c0fd5446c.git
+    git clone https://github.com/stengunxx/Stenfit.git
     ```
 
 2. **Installeer een lokale server** (zoals XAMPP of MAMP) om PHP en MySQL te draaien.

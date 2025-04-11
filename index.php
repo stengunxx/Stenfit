@@ -2,21 +2,26 @@
 session_start();
 
 if (!isset($_SESSION['LoggedInUser'])) {
-    header('location: login.php');
+    header('Location: login.php');
     exit();
 }
 
 require 'db.php';
 
+// Weekdata berekenen
 $start_datum = strtotime('monday this week');
 $week_dagen = [];
 
 for ($i = 0; $i <= 6; $i++) {
     $dag_datum = strtotime("+$i days", $start_datum);
-    $week_dagen[] = date('j', $dag_datum);
+    $week_dagen[] = [
+        'datum' => date('j', $dag_datum),
+        'engels' => date('l', $dag_datum)
+    ];
 }
 
-$dag = date('l');
+// Dag van vandaag bepalen
+$vandaag_engels = date('l');
 
 $dagen = [
     'Monday' => 'maandag',
@@ -28,24 +33,27 @@ $dagen = [
     'Sunday' => 'zondag',
 ];
 
-$button_colors = array_fill_keys($dagen, 'white');
+// Alle knoppen standaard wit
+$button_colors = array_fill_keys(array_values($dagen), 'white');
 
-if (isset($dagen[$dag])) {
-    $button_colors[$dagen[$dag]] = 'rgb(225, 97, 251)';
+// Vandaag een andere kleur geven
+if (isset($dagen[$vandaag_engels])) {
+    $button_colors[$dagen[$vandaag_engels]] = 'rgb(225, 97, 251)';
 }
 
+// Gebruiker ophalen
 $stmt = $pdo->prepare("SELECT * FROM gebruikers WHERE id = :id");
 $stmt->execute(['id' => $_SESSION['LoggedInUser']]);
 $stmtData = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Welkom - Stenfit</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -57,34 +65,42 @@ $stmtData = $stmt->fetch(PDO::FETCH_ASSOC);
                 <button><img src="./fotos/home.png" alt="">Home</button>
             </form>
             <form action="training.php">
-                <button><img src="./fotos/training.png" alt="">training</button>
+                <button><img src="./fotos/training.png" alt="">Training</button>
             </form>
             <form action="voortgang.php">
-                <button><img src="./fotos/voortgang.png" alt="">voortgang</button>
+                <button><img src="./fotos/voortgang.png" alt="">Voortgang</button>
             </form>
         </div>
         <form action="logout.php" method="POST">
             <button type="submit" name="submit" id="submit">Logout</button>
         </form>
     </div>
-    <h1>Welkom terug <?php echo $stmtData['username'] ?></h1>
+
+    <h1>Welkom terug, <?php echo htmlspecialchars($stmtData['username']); ?>!</h1>
+
     <div class="hoofd">
         <div class="week">
             <div class="bezoeken">
-                <h3>jouw week</h3>
-                <a href="Voortgang.php" class="a">Bezoeken bekijken</a>
+                <h3>Jouw week</h3>
+                <a href="voortgang.php" class="a">Bezoeken bekijken</a>
             </div>
+
             <form action="getrained.php" method="POST">
                 <div class="dag">
                     <?php
-                    foreach ($dagen as $dag_en => $dag_nl) {
-                        $index = array_search($dag_nl, $week_dagen);
-                        echo "<button type='submit' value='$dag_nl' name='dag' id='$dag_nl' class='dagen' style='background-color: {$button_colors[$dag_nl]};'>{$week_dagen[$index]}<br>" . substr($dag_nl, 0, 2) . "</button>";
+                    foreach ($week_dagen as $dag_info) {
+                        $dag_en = $dag_info['engels'];
+                        $dag_nl = $dagen[$dag_en];
+                        $datum = $dag_info['datum'];
+                        $kleur = $button_colors[$dag_nl];
+
+                        echo "<button type='submit' value='$dag_nl' name='dag' id='$dag_nl' class='dagen' style='background-color: $kleur;'>$datum<br>" . substr($dag_nl, 0, 2) . "</button>";
                     }
                     ?>
                 </div>
             </form>
         </div>
+
         <div class="reclame">
             <?php
             $apiKey = 'cd422b5c325b44bc804bb888a74dce32';
@@ -105,7 +121,7 @@ $stmtData = $stmt->fetch(PDO::FETCH_ASSOC);
                 $newsData = json_decode($response, true);
 
                 if (isset($newsData['articles'])) {
-                    echo "<h1>Top Headline News</h1>";
+                    echo "<h1>Sportnieuws</h1>";
                     foreach ($newsData['articles'] as $article) {
                         echo "<h2>" . htmlspecialchars($article['title']) . "</h2>";
                         echo "<p>" . htmlspecialchars($article['description']) . "</p>";
@@ -115,6 +131,7 @@ $stmtData = $stmt->fetch(PDO::FETCH_ASSOC);
                     echo "Geen nieuws beschikbaar.";
                 }
             }
+
             curl_close($ch);
             ?>
         </div>

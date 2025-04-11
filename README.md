@@ -36,8 +36,8 @@ Volg onderstaande stappen om het project lokaal op te zetten:
       ```php
       $host = 'localhost';
       $dbname = 'stenfit';
-      $username = 'bit_academy';
-      $password = 'bit_academy';
+      $username = 'root'; // Vul jouw persoonlijke gegevens in
+       $password = ''; // Vul jouw persoonlijke gegevens in
       ```
 
 5. **Start de server** en open de website via `http://localhost/Backend-Eindproject/Almost-there-5820506ed00c-fb3c0fd5446c/` in je webbrowser.
